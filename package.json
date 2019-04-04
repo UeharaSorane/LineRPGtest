@@ -15,7 +15,8 @@
     "google-spreadsheet": "2.0.3",
     "sync": "0.2.5",
     "linebot": "1.4.1",
-    "mongoose":"5.4.3"
+    "mongoose":"5.4.3",
+    "node-wit":"5.0.0"
   },
   "keywords": [
     "Sorane",
