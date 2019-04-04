@@ -25,7 +25,7 @@ function randomReply(userName,chat) {
 		'\我的父親(?)，施彥任內心有點脆弱，拜托沒事不要傷他的心喔。',
 		'\比起一直找我聊天，不如試著找其他事做吧。',
 		'\稍微...讓我休息一下吧(攤'];
-	system.log(chat);
+	console.log(chat);
 	rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
 
 		return ['rply',rply];
