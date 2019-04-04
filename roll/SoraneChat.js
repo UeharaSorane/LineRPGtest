@@ -9,7 +9,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 
 //////////////// 空音閒談
 function randomReply(userName,chat) {
-	client.message(chat, {}).then((data) => {
+	WitClient.message(chat, {}).then((data) => {
 		console.log('接受到了: ' + JSON.stringify(data));
 	}).catch(console.error);
 	
