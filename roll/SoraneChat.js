@@ -1,9 +1,9 @@
 var rollbase = require('./rollbase.js');
 var {Wit, log} = require("node-wit");
 
-/*var WitClient = new Wit({
-  	accessToken: process.env.WIT_ACCESSTOKEN // 同上
-});*/
+var WitClient = new Wit({
+  	accessToken: "QEF3CPJXJGTFFS3OJUXEOPXU5V5UJGIX" // 同上
+});
 	
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
