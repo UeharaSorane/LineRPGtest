@@ -1,5 +1,11 @@
+var linebot = require('linebot');
 var rollbase = require('./rollbase.js');
 var {Wit, log} = require("node-wit");
+
+var bot = linebot({
+  	channelSecret: process.env.LINE_CHANNEL_SECRET, //這裡是讓系統抓在Heroku設定的數據
+  	channelAccessToken: process.env.LINE_CHANNEL_ACCESSTOKEN // 同上
+});
 
 var WitClient = new Wit({
   	accessToken: "QEF3CPJXJGTFFS3OJUXEOPXU5V5UJGIX" // 同上
@@ -8,12 +14,16 @@ var WitClient = new Wit({
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
 //////////////// 空音閒談
-function randomReply(userName,chat) {
-	WitClient.message(chat, {}).then((data) => {
-		console.log('接受到了: ' + JSON.stringify(data));
-	}).catch(console.error);
+function randomReply(userID,userName,chat) {
 	
-	let rplyArr = [
+	WitClient.message(chat, {
+		let rplyArr = [] ;
+		if(entities == "thinking"){
+		rplyArr = ['你何不問問神奇海螺呢？'];
+
+		}else{
+
+		rplyArr = [
 
 		userName+'，感覺你很閒呢…能一直找我聊天...',
 		userName+'\！幫我撐十秒！！！', 
@@ -35,13 +45,26 @@ function randomReply(userName,chat) {
 		'\我的父親(?)，施彥任內心有點脆弱，拜托沒事不要傷他的心喔。',
 		'\比起一直找我聊天，不如試著找其他事做吧。',
 		'\稍微...讓我休息一下吧(攤'];
-	console.log(chat);
-	rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
+			  rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
+	bot.push(userID,rply.text);
+	
+	
+	} 
+			  
+		
+	}).then((data) => {
+		
+	}).catch(console.error);
+	
+	
+	
 
-		return ['rply',rply];
+		return ['none',rply];
 }
 ////////////////
 
 module.exports = {
+
+	
 	randomReply	
 };
