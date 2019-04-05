@@ -51,7 +51,8 @@ bot.on('message', function(event) {
 				}).catch(function (error) {
 				  // error
 				});
-			}	
+			}else if(rply[0] == 'push'){
+			}
 		}
 	});
 });
