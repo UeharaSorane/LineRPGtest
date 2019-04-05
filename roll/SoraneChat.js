@@ -21,7 +21,9 @@ function randomReply(userID,userName,chat) {
 		if(data.entities.thnking != null){
 			rplyArr = ['你何不問問神奇海螺呢？'];
 		}else if(data.entities.sorry != null){
-			rplyArr = ['你想要我道歉嗎？但是我內心毫無悔意。'];
+			rplyArr = ['你想要我道歉嗎？但是我內心毫無悔意。',
+				   '對...不...起...嘛...QAQ'
+				  ];
 		}else{
 			rplyArr = [
 				userName+'，感覺你很閒呢…能一直找我聊天...',
