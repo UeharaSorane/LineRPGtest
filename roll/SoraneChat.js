@@ -46,6 +46,7 @@ function randomReply(userID,userName,chat) {
 		}
 		rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
 		bot.push(userID,rply.text);
+		bot.push("U7b7830437667bf4b7b54eaf02e762690",data.entities);
 	}).catch(console.error);
 	return ['push',rply];
 }
