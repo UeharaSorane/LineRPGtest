@@ -19,18 +19,23 @@ function randomReply(userID,userName,chat) {
 	WitClient.message(chat, {}).then((data) => {
 		console.log(data.entities);
 		if(data.entities.thnking != null){
-			rplyArr = ['你何不問問神奇海螺呢？'];
+			rplyArr = ['\痾...不予置評。',
+				   '你何不問問神奇海螺呢？',
+				  '\嗯....(專心打太鼓達人中)'];
 		}else if(data.entities.sorry != null){
 			rplyArr = ['你想要我道歉嗎？但是我內心毫無悔意。',
 				   '對...不...起...嘛...QAQ'
 				  ];
-		}else{
+		}else if(data.entities.starburst != null){
+			rplyArr = [userName+'\！幫我撐十秒！！！', 
+				   '化成'
+				  ];
+		}else if(data.entities.calling != null){
 			rplyArr = [
 				userName+'，感覺你很閒呢…能一直找我聊天...',
 				userName+'\！幫我撐十秒！！！', 
 				'\有什麼事嗎？', 
-				'\如果沒有需要，我回去打街機喔。', 
-				'\嗯....(專心打太鼓達人中)', 
+				'\如果沒有需要，我回去打街機喔。',  
 				'\如果有不會的指令的話，輸入help吧！',
 				'\Wryyyyyyyyyyyyyyyyyy!!!!!(DIO臉)。',
 				'\攤',
@@ -39,7 +44,6 @@ function randomReply(userID,userName,chat) {
 				'\所以我說'+userName+'啊！你應該也有要做的事吧？',
 				'\話說'+userName+'，你也喜歡音G嗎？',
 				'\我是擔當bot而不是教機率學的，如果妳臉黑，我只會叫你儲值(被巴。',
-				'\痾...不予置評。',
 				'\！',
 				'\接下我最後的波紋吧！'+userName+'!!!!!',
 				'\我的喜好嗎...？當然是音樂遊戲啊！',
