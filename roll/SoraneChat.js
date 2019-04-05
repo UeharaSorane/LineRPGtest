@@ -25,7 +25,7 @@ function randomReply(userID,userName,chat) {
 				  ];
 		}else{
 			if(data.entities.thinking != null){
-				if(data.entities.foodshop != null){
+				if(data.entities.foodshop.length > 1){
 					//console.log(data.entities.foodshop[0]);
 					let shopchoice = [];
 					for(var i = 0;i<data.entities.foodshop.length;i++){
@@ -43,6 +43,11 @@ function randomReply(userID,userName,chat) {
 						   '你何不問問神奇海螺呢？',
 						  '\嗯....(專心打太鼓達人中)'];
 				}
+			}else if(data.entities.move != null){
+				
+				rplyArr = ['沒興趣就是了...',
+					   '但是我拒絕'
+					  ];
 			}else if(data.entities.sorry != null){
 				rplyArr = ['你想要我道歉嗎？但是我內心毫無悔意。',
 					   '對...不...起...嘛...QAQ'
