@@ -16,7 +16,8 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 //////////////// 空音閒談
 function randomReply(userID,userName,chat) {
 	var rplyArr = [] ;
-	WitClient.message(chat, {}).then((data) => {	
+	WitClient.message(chat, {}).then((data) => {
+		console.log(data);
 		if(data.entities == "thinking"){
 			rplyArr = ['你何不問問神奇海螺呢？'];
 		}else{
@@ -42,9 +43,9 @@ function randomReply(userID,userName,chat) {
 				'\比起一直找我聊天，不如試著找其他事做吧。',
 				'\稍微...讓我休息一下吧(攤'
 			];
-			rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
-			bot.push(userID,rply.text);
 		}
+		rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
+		bot.push(userID,rply.text);
 	}).catch(console.error);
 	return ['push',rply];
 }
