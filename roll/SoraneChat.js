@@ -26,7 +26,7 @@ function randomReply(userID,userName,chat) {
 		}else{
 			if(data.entities.thinking != null){
 				if(data.entites.foodshop != null){
-					console.log(data.entities.foodshop[0]);
+					console.log(data.entities.foodshop);
 					/*let shopchoice = [];
 					for(var i = 0;i<data.entites.foodshop.length;i++){
 						shopchoice[i] = data.entites.foodshop[i].value;
