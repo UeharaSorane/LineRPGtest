@@ -17,9 +17,11 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 function randomReply(userID,userName,chat) {
 	var rplyArr = [] ;
 	WitClient.message(chat, {}).then((data) => {
-		//console.log(data.entities.calling);
+		console.log(data.entities);
 		if(data.entities.thnking != null){
 			rplyArr = ['你何不問問神奇海螺呢？'];
+		}else if(data.entities.sorry != null){
+			rplyArr = ['你想要我道歉嗎？但是我內心毫無悔意。'];
 		}else{
 			rplyArr = [
 				userName+'，感覺你很閒呢…能一直找我聊天...',
