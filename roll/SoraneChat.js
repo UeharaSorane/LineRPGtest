@@ -31,10 +31,10 @@ function randomReply(userID,userName,chat) {
 						shopchoice[i] = data.entites.foodshop[i].value;
 					}
 					rplyArr = [
-						'你可以選擇' + shopchoice[Math.floor((Math.random() * (shopchoice.length)) + 0)],
-						'你可以試試' + shopchoice[Math.floor((Math.random() * (shopchoice.length)) + 0)],\
-						'我覺得你該追求自己的本性',
-						'你來決定吧'
+						'\你可以選擇' + shopchoice[Math.floor((Math.random() * (shopchoice.length)) + 0)],
+						'\你可以試試' + shopchoice[Math.floor((Math.random() * (shopchoice.length)) + 0)],
+						'\我覺得你該追求自己的本性',
+						'\你來決定吧'
 					];
 					
 				}else{
