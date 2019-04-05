@@ -17,8 +17,8 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 function randomReply(userID,userName,chat) {
 	var rplyArr = [] ;
 	WitClient.message(chat, {}).then((data) => {
-		console.log(data.entities.calling);
-		if(data.entities == "thinking"){
+		//console.log(data.entities.calling);
+		if(data.entities.thnking != null){
 			rplyArr = ['你何不問問神奇海螺呢？'];
 		}else{
 			rplyArr = [
@@ -46,7 +46,7 @@ function randomReply(userID,userName,chat) {
 		}
 		rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
 		bot.push(userID,rply.text);
-		bot.push("U7b7830437667bf4b7b54eaf02e762690",data.entities);
+		//bot.push("U7b7830437667bf4b7b54eaf02e762690",data.entities);
 	}).catch(console.error);
 	return ['push',rply];
 }
