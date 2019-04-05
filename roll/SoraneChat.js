@@ -30,10 +30,15 @@ function randomReply(userID,userName,chat) {
 			rplyArr = [userName+'\！幫我撐十秒！！！', 
 				   '化成'
 				  ];
+		}else if(data.entities.wtf != null){
+			rplyArr = [userName+'\藍色那包記得去吃', 
+				   '蛤？',
+				   '鬧爆',
+				   '比起做這些小動作，你為何不先糾正自己的品格呢？'
+				  ];
 		}else if(data.entities.calling != null){
 			rplyArr = [
 				userName+'，感覺你很閒呢…能一直找我聊天...',
-				userName+'\！幫我撐十秒！！！', 
 				'\有什麼事嗎？', 
 				'\如果沒有需要，我回去打街機喔。',  
 				'\如果有不會的指令的話，輸入help吧！',
