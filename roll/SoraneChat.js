@@ -18,7 +18,7 @@ function randomReply(userID,userName,chat) {
 	var rplyArr = [] ;
 	WitClient.message(chat, {}).then((data) => {
 		console.log(data.entities);
-		if(data.entities.thnking != null){
+		if(data.entities.thinking != null){
 			rplyArr = ['\痾...不予置評。',
 				   '你何不問問神奇海螺呢？',
 				  '\嗯....(專心打太鼓達人中)'];
