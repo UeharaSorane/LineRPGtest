@@ -26,14 +26,14 @@ function randomReply(userID,userName,chat) {
 		}else{
 			if(data.entities.thinking != null){
 				if(data.entities.foodshop != null){
-					console.log(data.entities.foodshop[0]);
-					/*let shopchoice = [];
+					//console.log(data.entities.foodshop[0]);
+					let shopchoice = [];
 					for(var i = 0;i<data.entites.foodshop.length;i++){
 						shopchoice[i] = data.entites.foodshop[i].value;
-					}*/
+					}
 					rplyArr = [
-						/*'\你可以選擇' + shopchoice[Math.floor((Math.random() * (shopchoice.length)) + 0)],
-						'\你可以試試' + shopchoice[Math.floor((Math.random() * (shopchoice.length)) + 0)],*/
+						'\你可以選擇' + shopchoice[Math.floor((Math.random() * (shopchoice.length)) + 0)],
+						'\你可以試試' + shopchoice[Math.floor((Math.random() * (shopchoice.length)) + 0)],
 						'\我覺得你該追求自己的本性',
 						'\你來決定吧'
 					];
