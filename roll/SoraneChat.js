@@ -14,7 +14,7 @@ var WitClient = new Wit({
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
 //////////////// 空音閒談
-function randomReply(userID,userName,chat) {
+function randomReply(GroupID,userID,userName,chat) {
 	var rplyArr = [] ;
 	WitClient.message(chat, {}).then((data) => {
 		console.log(data.entities);
@@ -80,10 +80,13 @@ function randomReply(userID,userName,chat) {
 				];
 			}
 		}
-		
 		rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
-		bot.push(userID,rply.text);
-		//bot.push("U7b7830437667bf4b7b54eaf02e762690",data.entities);
+		
+		if(GroupID != null){
+			bot.push(GroupID,rply.text);
+		}else{
+			bot.push(userID,rply.text);
+		}
 	}).catch(console.error);
 	return ['push',rply];
 }
