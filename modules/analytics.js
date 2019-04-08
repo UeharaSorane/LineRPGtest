@@ -41,7 +41,7 @@ function parseInput(inputStr,UserID,UserN,GroupID) {
 	if (trigger.match(/^鸚鵡測試$/) != null) return exports.Testing.ReplyTest(UserN,mainMsg[1]);//測試reply功能用
 	else if (trigger.match(/^大聲測試$/) != null) return exports.Testing.PushTest(UserID,GroupID);//測試push功能用
 	else if (trigger.match(/^淦話$/) != null) return exports.Testing.SecretTalk(UserN,mainMsg[1],mainMsg[2]);//匿名對話
-	else if (trigger.match(/空音/) != null) return exports.SoraneChat.randomReply(UserID,UserN,trigger) ;//空音閒談指令
+	else if (trigger.match(/空音/) != null) return exports.SoraneChat.randomReply(GroupID,UserID,UserN,trigger) ;//空音閒談指令
 	else if (trigger.match(/運氣|運勢/) != null) return exports.funny.randomLuck(mainMsg) ; //占卜運氣
 	else if (trigger.match(/flag|插旗/) != null) return exports.funny.BStyleFlagSCRIPTS() ;//插旗用指令
 	else if (trigger.match(/^help$|^幫助$/)!= null ) return exports.Help.Help(UserN);//幫助頁面
