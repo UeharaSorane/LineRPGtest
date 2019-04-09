@@ -48,6 +48,9 @@ function randomReply(GroupID,userID,userName,chat) {
 				rplyArr = ['沒興趣就是了...',
 					   '但是我拒絕'
 					  ];
+			}else if(data.entities.not_sorry != null){
+				rplyArr = ['好喔'
+					  ];
 			}else if(data.entities.sorry != null){
 				rplyArr = ['你想要我道歉嗎？但是我內心毫無悔意。',
 					   '對...不...起...嘛...QAQ'
